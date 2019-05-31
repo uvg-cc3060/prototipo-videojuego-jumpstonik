@@ -60,7 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\pickableObject.cs" />
+    <Compile Include="Assets\Scripts\pickUpObject.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PushRigidBody.cs" />
+    <Compile Include="Assets\Scripts\ThirdpersonCamara.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -93,6 +97,12 @@
     </Reference>
     <Reference Include="Unity.ugui.Editor">
       <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Unity.ugui.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0b1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

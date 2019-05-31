@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 camFoward;
     private Vector3 CamRight;
 
+    public bool isOnSlope = false;
+    private Vector3 hitNormal;
+    public float slideVelocity;
+    public float slopeFloatDown;
+
+    public float pushPower = 2.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         PlayerSkills();
 
-        player.Move(movePlayer * Time.deltaTime*-1);
+        player.Move(movePlayer * Time.deltaTime);
 
         Debug.Log(player.velocity.magnitude);
     }
@@ -79,6 +86,7 @@ public class PlayerController : MonoBehaviour
             fallVelocity += gravity * Time.deltaTime;
             movePlayer.y = fallVelocity;
         }
+        SlideDown();
 
     }
 
@@ -91,4 +99,26 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    public void SlideDown()
+    {
+        isOnSlope = Vector3.Angle(Vector3.up, hitNormal) >= player.slopeLimit;
+
+        if (isOnSlope)
+        {
+            movePlayer.x -= ((1f - hitNormal.y) * hitNormal.x) * slideVelocity;
+            movePlayer.z -= ((1f - hitNormal.y) * hitNormal.z) * slideVelocity;
+
+            movePlayer.y -= slopeFloatDown;
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        hitNormal = hit.normal;
+
+
+    }
+
+    
 }

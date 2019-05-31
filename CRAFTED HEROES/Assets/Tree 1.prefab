@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8829695986740618648}
   - component: {fileID: 2737543262211346380}
   - component: {fileID: 8388598659639939129}
+  - component: {fileID: 1619278689}
+  - component: {fileID: 1792941203}
   m_Layer: 0
   m_Name: Tree 1
   m_TagString: Untagged
@@ -88,6 +90,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &1619278689
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249768579013202199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.65
+  m_Height: 14.742584
+  m_Direction: 1
+  m_Center: {x: 0.13, y: 7.371292, z: 0.3}
+--- !u!136 &1792941203
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249768579013202199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.45
+  m_Height: 14.742584
+  m_Direction: 1
+  m_Center: {x: -0.02, y: 7.371292, z: 0.33}
 --- !u!21 &-8542767626264424343
 Material:
   serializedVersion: 6
@@ -123,7 +153,7 @@ Material:
     - _Cutoff: 0.3
     - _SquashAmount: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.28931528, g: 0.6132076, b: 0.26321647, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
