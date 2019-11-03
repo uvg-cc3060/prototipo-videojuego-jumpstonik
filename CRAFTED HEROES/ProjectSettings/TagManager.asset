@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerInteractionZone
+  - comida
+  - mesa
   layers:
   - Default
   - TransparentFX
