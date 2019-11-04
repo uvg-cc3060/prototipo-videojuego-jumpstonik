@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 471599076}
   - component: {fileID: 471599077}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: hitBoxGolem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1652,6 +1652,36 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0d888bd485ec28f4cba3176a6f2f8b37, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4c002bbbfa193f4db5810b5526b4c85, type: 3}
+--- !u!1 &524166154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524166155}
+  m_Layer: 0
+  m_Name: spawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &524166155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524166154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -0.428}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 998638708}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &531772281
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,6 +2609,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682044426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &683864419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683864420}
+  m_Layer: 0
+  m_Name: spawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &683864420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683864419}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -0.126}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 1604676781}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,6 +4533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2069901205}
+  - {fileID: 524166155}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4488,9 +4549,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dabb9d1c94ac942974cb1cfd4f41c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePoints: 100
+  lifePotion: {fileID: 1936959807925654203, guid: aac3b27e49870ef49bfd5aff0790a82c,
+    type: 3}
+  magicPotion: {fileID: 5935041399466779970, guid: eda00d6230e27af489e270e310f5b907,
+    type: 3}
+  spawnZone: {fileID: 524166155}
   tiempo: 0
   speed: 1
-  PuntoGuarida: {fileID: 0}
   anim: {fileID: 1338598090}
   Idle: 0
   Atacar: 0
@@ -4501,7 +4567,7 @@ MonoBehaviour:
   RandTime: 0
   Target: {fileID: 1304722220}
   agent: {fileID: 998638713}
-  distance: 0
+  distance: 15
 --- !u!65 &998638710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4558,7 +4624,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -8069,6 +8135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1508925567 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2094802548730884522, guid: 1dc2e483792cf0740bde25219984d3b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6628295426850290041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1543657906
 GameObject:
   m_ObjectHideFlags: 0
@@ -8379,6 +8451,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425b1189d6ab5fc4d9f3b74cbff82be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePoints: 100
+  lifePotion: {fileID: 1936959807925654203, guid: aac3b27e49870ef49bfd5aff0790a82c,
+    type: 3}
+  magicPotion: {fileID: 5935041399466779970, guid: eda00d6230e27af489e270e310f5b907,
+    type: 3}
+  spawnZone: {fileID: 683864420}
+  tiempo: 0
+  speed: 0
+  anim: {fileID: 1508925567}
+  Atacar: 0
+  run: 0
+  death: 0
+  Estado: 1
+  RandTime: 0
   Target: {fileID: 1304722220}
   agent: {fileID: 1604676776}
   distance: 15
@@ -8472,6 +8558,7 @@ Transform:
   m_Children:
   - {fileID: 1774650823}
   - {fileID: 471599076}
+  - {fileID: 683864420}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8820,7 +8907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672528176}
-  m_LocalRotation: {x: 0.15399678, y: -0.60203993, z: 0.11974085, w: 0.7742707}
+  m_LocalRotation: {x: 0.1539968, y: -0.6020399, z: 0.11974086, w: 0.7742708}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

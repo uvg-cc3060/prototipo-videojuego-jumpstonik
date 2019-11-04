@@ -5,10 +5,19 @@ using UnityEngine.AI;
 
 public class EnemyIAFlyer : MonoBehaviour
 {
+    [Header("Enemy_Status")]
+    public int lifePoints = 100;
+    private bool alive = true;
+
+    [Header("Potions")]
+    public GameObject lifePotion;
+    public GameObject magicPotion;
+    public Transform spawnZone;
+
     [Header("Movement_Ajustes")]
     public int tiempo;
     public float speed;
-    public Transform PuntoGuarida;
+    //public Transform PuntoGuarida;
     public Animator anim;
     bool Tiempodegiro;
     float y;
@@ -51,8 +60,17 @@ public class EnemyIAFlyer : MonoBehaviour
                 RandTime = 0;
             }
         }
-        
 
+        if (lifePoints <= 0)
+        {
+            changeStates(5);
+            updateAnimations();
+            if (alive == true)
+            {
+                spawnPotions();
+            }
+            Destroy(gameObject,1.5f);
+        }
         if (Idle == true)
         {
             changeStates(1);
@@ -64,6 +82,12 @@ public class EnemyIAFlyer : MonoBehaviour
             updateAnimations();
             agent.SetDestination(Target.transform.position);
             agent.speed = 3;
+
+            if (Vector3.Distance(Target.transform.position, transform.position) <= agent.stoppingDistance)
+            {
+                changeStates(3);
+                updateAnimations();
+            }
 
         }else if (walk == true)
         {
@@ -102,6 +126,7 @@ public class EnemyIAFlyer : MonoBehaviour
         anim.SetBool("walk", walk);
         anim.SetBool("hit", hit);
         anim.SetBool("attack", Atacar);
+        anim.SetBool("death", death);
     }
 
     public void changeStates(int state)
@@ -139,5 +164,24 @@ public class EnemyIAFlyer : MonoBehaviour
         {
             death = true;
         }
+    }
+
+    private void spawnPotions()
+    {
+        int posibility = Random.Range(0, 100);
+        alive = false;
+        if (posibility < 25)
+        {
+            Instantiate(lifePotion, spawnZone.position, spawnZone.rotation);
+            Instantiate(magicPotion, spawnZone.position, spawnZone.rotation);
+        }else if (posibility >= 25 && posibility < 50)
+        {
+            Instantiate(lifePotion, spawnZone.position, spawnZone.rotation);
+        }
+        else if (posibility >= 50 && posibility < 75)
+        {
+            Instantiate(magicPotion, spawnZone.position, spawnZone.rotation);
+        }
+
     }
 }

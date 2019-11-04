@@ -42,7 +42,8 @@ public class shootingController : MonoBehaviour
                 }
                 if (tipo == 2)
                 {
-                    bulletController newBullet = Instantiate(bullet2, firePoint.position, firePoint.rotation) as bulletController;
+                    Vector3 ajuste = new Vector3(-1.0f, 1.0f, 0.0f);
+                    bulletController newBullet = Instantiate(bullet2, firePoint.position - ajuste, firePoint.rotation) as bulletController;
                     newBullet.speed = bulletSpeed;
                     //Debug.Log("hielo");
                 }
