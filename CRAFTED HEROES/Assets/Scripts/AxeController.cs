@@ -18,18 +18,6 @@ public class AxeController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
 
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                controlAnimator.SetBool("ice", true);
-                theGun.tipo = 2;
-                theGun.isFiring = true;
-            }
-            else
-            {
-                controlAnimator.SetBool("ice", false);
-                theGun.isFiring = false;
-            }
-
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 controlAnimator.SetBool("fire", true);
@@ -41,7 +29,21 @@ public class AxeController : MonoBehaviour
             {
                 controlAnimator.SetBool("fire", false);
                 theGun.isFiring = false;
+
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    controlAnimator.SetBool("ice", true);
+                    theGun.tipo = 2;
+                    theGun.isFiring = true;
+                }
+                else
+                {
+                    controlAnimator.SetBool("ice", false);
+                    theGun.isFiring = false;
+                }
             }
+
+            
 
         }
         if (!Input.GetKey(KeyCode.LeftShift))
@@ -64,5 +66,10 @@ public class AxeController : MonoBehaviour
                 controlAnimator.SetBool("horAttack", false);
             }
         }
+    }
+
+    private void shooting(int num)
+    {
+
     }
 }

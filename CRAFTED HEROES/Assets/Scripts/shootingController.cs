@@ -24,24 +24,27 @@ public class shootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shotCounter -= Time.deltaTime;
         if (isFiring)
         {
-            Debug.Log("esta disparando");
-            shotCounter -= Time.deltaTime;
+            Debug.Log(shotCounter);
+            
             if (shotCounter <= 0)
             {
                 shotCounter = timeBetweenShots;
-                Debug.Log("sali");
+                //Debug.Log("sali");
                 if (tipo == 1)
                 {
                     
                     bulletController newBullet = Instantiate(bullet1, firePoint.position, firePoint.rotation) as bulletController;
                     newBullet.speed = bulletSpeed;
+                    //Debug.Log("fuego");
                 }
                 if (tipo == 2)
                 {
                     bulletController newBullet = Instantiate(bullet2, firePoint.position, firePoint.rotation) as bulletController;
                     newBullet.speed = bulletSpeed;
+                    //Debug.Log("hielo");
                 }
             }
             else

@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\magicPotion.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -70,6 +71,11 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\AxeController.cs" />
     <Compile Include="Assets\Scripts\bulletController.cs" />
+    <Compile Include="Assets\Scripts\EnemyIAFlyer.cs" />
+    <Compile Include="Assets\Scripts\EnemyIAGolem.cs" />
+    <Compile Include="Assets\Scripts\EnemyIASkeleton.cs" />
+    <Compile Include="Assets\Scripts\LifePotion.cs" />
+    <Compile Include="Assets\Scripts\MagicPotion.cs" />
     <Compile Include="Assets\Scripts\pickableObject.cs" />
     <Compile Include="Assets\Scripts\pickUpObject.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
