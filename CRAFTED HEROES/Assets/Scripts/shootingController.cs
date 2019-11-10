@@ -35,15 +35,15 @@ public class shootingController : MonoBehaviour
                 //Debug.Log("sali");
                 if (tipo == 1)
                 {
-                    
-                    bulletController newBullet = Instantiate(bullet1, firePoint.position, firePoint.rotation) as bulletController;
+                    Vector3 ajuste = new Vector3(1.0f, 0.0f, 0.0f);
+                    bulletController newBullet = Instantiate(bullet1, firePoint.position + ajuste, firePoint.rotation) as bulletController;
                     newBullet.speed = bulletSpeed;
                     //Debug.Log("fuego");
                 }
                 if (tipo == 2)
                 {
-                    Vector3 ajuste = new Vector3(-1.0f, 1.0f, 0.0f);
-                    bulletController newBullet = Instantiate(bullet2, firePoint.position - ajuste, firePoint.rotation) as bulletController;
+                    Vector3 ajuste = new Vector3(0.7f, -1.0f, -1.1f);
+                    bulletController newBullet = Instantiate(bullet2, firePoint.position + ajuste, firePoint.rotation) as bulletController;
                     newBullet.speed = bulletSpeed;
                     //Debug.Log("hielo");
                 }

@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\EnemyIAFlyer.cs" />
     <Compile Include="Assets\Scripts\EnemyIAGolem.cs" />
     <Compile Include="Assets\Scripts\EnemyIASkeleton.cs" />
+    <Compile Include="Assets\Scripts\Gollem2.cs" />
+    <Compile Include="Assets\Scripts\hitPlayer.cs" />
     <Compile Include="Assets\Scripts\LifePotion.cs" />
     <Compile Include="Assets\Scripts\MagicPotion.cs" />
     <Compile Include="Assets\Scripts\pickableObject.cs" />
@@ -122,6 +124,9 @@
     </Reference>
     <Reference Include="Unity.ugui.Editor">
       <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Unity.ugui.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0b1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

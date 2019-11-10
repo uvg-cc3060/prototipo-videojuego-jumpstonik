@@ -6,8 +6,11 @@ using UnityEngine.AI;
 public class EnemyIAGolem : MonoBehaviour
 {
     [Header("Enemy_Status")]
+    public Rigidbody rb;
     public int lifePoints = 100;
     private bool alive = true;
+    public GameObject hitBox;
+    public Animator controlAnimator;
 
     [Header("Potions")]
     public GameObject lifePotion;
@@ -36,11 +39,11 @@ public class EnemyIAGolem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //agent.speed = 0;
         tiempo += 1;
@@ -71,8 +74,9 @@ public class EnemyIAGolem : MonoBehaviour
         else if (run == true)
         {
             updateAnimations();
-            transform.Translate(transform.forward * speed * Time.deltaTime);
             transform.Rotate(new Vector3(0, y, 0));
+            rb.velocity = transform.forward * speed;
+            
 
             if (tiempo >= Random.Range(100, 2500))
             {
@@ -97,6 +101,14 @@ public class EnemyIAGolem : MonoBehaviour
             changeStates(1);
             updateAnimations();
         }
+        if (controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("atack") == true )
+        {
+            hitBox.SetActive(true);
+        }
+        else
+        {
+            hitBox.SetActive(false);
+        }
     }
 
     public void Girar()
@@ -113,7 +125,7 @@ public class EnemyIAGolem : MonoBehaviour
 
     public void changeStates(int state)
     {
-        Debug.Log(state);
+        //Debug.Log(state);
         if (state == 1)
         {
             run = true;
@@ -148,5 +160,27 @@ public class EnemyIAGolem : MonoBehaviour
             Instantiate(magicPotion, spawnZone.position, spawnZone.rotation);
         }
 
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "iceBall")
+        {
+            lifePoints -= 15;
+        }
+        if (collision.gameObject.tag == "iceBall")
+        {
+            lifePoints -= 15;
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "metalHit")
+        {
+            lifePoints -= 20;
+        }
+        if(other.tag == "mangoHit")
+        {
+            lifePoints -= 10;
+        }
     }
 }

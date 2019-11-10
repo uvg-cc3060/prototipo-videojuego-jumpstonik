@@ -7,6 +7,13 @@ TagManager:
   - PlayerInteractionZone
   - comida
   - mesa
+  - iceBall
+  - fireBall
+  - metalHit
+  - mangoHit
+  - hitBoxGolem
+  - hitBoxFlyer
+  - hitBoxSword
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
-public class NewBehaviourScript : MonoBehaviour
+public class magicPotion : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

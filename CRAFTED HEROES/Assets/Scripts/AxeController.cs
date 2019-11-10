@@ -6,10 +6,13 @@ public class AxeController : MonoBehaviour
 {
     private Animator controlAnimator;
     public shootingController theGun;
+    public GameObject metalHitBox;
+    public GameObject mangoHitBox;
     // Start is called before the first frame update
     void Start()
     {
         controlAnimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -60,12 +63,25 @@ public class AxeController : MonoBehaviour
             if (Input.GetKey(KeyCode.Mouse1))
             {
                 controlAnimator.SetBool("horAttack", true);
+                //Debug.Log(controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("horAttack"));
             }
             else
             {
                 controlAnimator.SetBool("horAttack", false);
             }
         }
+
+        if (controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("horizontal_attack") == true || controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("vertical_attack") == true)
+        {
+            metalHitBox.SetActive(true);
+            mangoHitBox.SetActive(true);
+        }
+        else
+        {
+            metalHitBox.SetActive(false);
+            mangoHitBox.SetActive(false);
+        }
+        
     }
 
     private void shooting(int num)

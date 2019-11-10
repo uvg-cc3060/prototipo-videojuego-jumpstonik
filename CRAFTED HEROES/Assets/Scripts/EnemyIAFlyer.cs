@@ -6,8 +6,11 @@ using UnityEngine.AI;
 public class EnemyIAFlyer : MonoBehaviour
 {
     [Header("Enemy_Status")]
+    public Rigidbody rb;
     public int lifePoints = 100;
     private bool alive = true;
+    public GameObject hitBox;
+    public Animator controlAnimator;
 
     [Header("Potions")]
     public GameObject lifePotion;
@@ -38,17 +41,17 @@ public class EnemyIAFlyer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //agent.speed = 0;
         tiempo += 1;
         RandTime += 1;
         if (RandTime <= Random.Range(500, 550))
-        { 
+        {
             changeStates(2);
         }
         else
@@ -69,7 +72,7 @@ public class EnemyIAFlyer : MonoBehaviour
             {
                 spawnPotions();
             }
-            Destroy(gameObject,1.5f);
+            Destroy(gameObject, 1.5f);
         }
         if (Idle == true)
         {
@@ -89,29 +92,36 @@ public class EnemyIAFlyer : MonoBehaviour
                 updateAnimations();
             }
 
-        }else if (walk == true)
+        } else if (walk == true)
         {
             updateAnimations();
-            transform.Translate(transform.forward * speed * Time.deltaTime);
             transform.Rotate(new Vector3(0, y, 0));
+            rb.velocity = transform.forward * speed;
 
-            if(tiempo >= Random.Range(100, 2500))
+            if (tiempo >= Random.Range(100, 2500))
             {
                 Girar();
                 tiempo = 0;
-                
                 Tiempodegiro = true;
             }
 
             if (Tiempodegiro == true)
             {
-                if (tiempo >= Random.Range(50,100))
+                if (tiempo >= Random.Range(10, 30))
                 {
                     y = 0;
                     //RandTime = 0;
                     Tiempodegiro = false;
                 }
             }
+        }
+        if (controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("attack") == true)
+        {
+            hitBox.SetActive(true);
+        }
+        else
+        {
+            hitBox.SetActive(false);
         }
     }
 
@@ -131,7 +141,7 @@ public class EnemyIAFlyer : MonoBehaviour
 
     public void changeStates(int state)
     {
-        Debug.Log(state);
+        //Debug.Log(state);
         if (state == 1)
         {
             Idle = true;
@@ -174,7 +184,7 @@ public class EnemyIAFlyer : MonoBehaviour
         {
             Instantiate(lifePotion, spawnZone.position, spawnZone.rotation);
             Instantiate(magicPotion, spawnZone.position, spawnZone.rotation);
-        }else if (posibility >= 25 && posibility < 50)
+        } else if (posibility >= 25 && posibility < 50)
         {
             Instantiate(lifePotion, spawnZone.position, spawnZone.rotation);
         }
@@ -183,5 +193,35 @@ public class EnemyIAFlyer : MonoBehaviour
             Instantiate(magicPotion, spawnZone.position, spawnZone.rotation);
         }
 
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "iceBall")
+        {
+            lifePoints -= 15;
+            changeStates(4);
+            updateAnimations();
+        }
+        if (collision.gameObject.tag == "iceBall")
+        {
+            lifePoints -= 15;
+            changeStates(4);
+            updateAnimations();
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "metalHit")
+        {
+            lifePoints -= 20;
+            changeStates(4);
+            updateAnimations();
+        }
+        if (other.tag == "mangoHit")
+        {
+            lifePoints -= 10;
+            changeStates(4);
+            updateAnimations();
+        }
     }
 }
