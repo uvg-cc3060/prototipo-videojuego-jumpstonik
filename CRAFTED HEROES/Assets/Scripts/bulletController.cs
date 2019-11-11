@@ -17,4 +17,12 @@ public class bulletController : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(gameObject, 2);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Terreno" || collision.gameObject.tag == "Golem" || collision.gameObject.tag == "Skeleton" || collision.gameObject.tag == "Flyer")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

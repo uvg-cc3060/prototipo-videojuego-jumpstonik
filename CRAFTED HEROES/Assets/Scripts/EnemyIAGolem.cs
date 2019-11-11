@@ -36,10 +36,14 @@ public class EnemyIAGolem : MonoBehaviour
     public GameObject Target;
     public NavMeshAgent agent;
     public float distance;
+
+    [Header("Nav_Ajustes")]
+    private Canvas UI;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        UI = GameObject.FindWithTag("UI").GetComponent<UnityEngine.Canvas>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,7 @@ public class EnemyIAGolem : MonoBehaviour
             updateAnimations();
             if(alive == true) { 
                 spawnPotions();
+                UI.GetComponent<UIController>().CountOfKills();
             }
             Destroy(gameObject,0.5f);
         }
@@ -163,7 +168,7 @@ public class EnemyIAGolem : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "iceBall")
+        if(collision.gameObject.tag == "fireBall")
         {
             lifePoints -= 15;
         }
