@@ -12,10 +12,10 @@ public class LifePotion : MonoBehaviour
             Debug.Log("estoy siendo tocado");
             if (other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points >= 0 || other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points <= 99)
             {
-                other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points += 10;
-                if (other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points > 100)
+                other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points += 10.0f;
+                if (other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points > 100.0f)
                 {
-                    other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points = 100;
+                    other.gameObject.GetComponent<ThirdPersonCharacter>().life_Points = 100.0f;
                 }
             }
 

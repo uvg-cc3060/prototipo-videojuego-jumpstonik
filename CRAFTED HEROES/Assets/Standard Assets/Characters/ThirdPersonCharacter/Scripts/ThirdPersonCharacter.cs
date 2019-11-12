@@ -8,7 +8,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	public class ThirdPersonCharacter : MonoBehaviour
 	{
         public int magic_Points = 100;
-        public int life_Points = 100;
+        public float life_Points = 100;
         [SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
 		[SerializeField] float m_JumpPower = 12f;
@@ -228,20 +228,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (other.tag == "hitBoxGolem")
             {
                 Debug.Log("me golpeo el golem");
-                life_Points -= 25;
+                life_Points -= 0.1f;
             }
             if (other.tag == "hitBoxFlyer")
             {
-                life_Points -= 15;
+                life_Points -= 0.2f;
+                
             }
             if (other.gameObject.tag == "hitBoxSword")
             {
-                life_Points -= 10;
+                life_Points -= 0.15f;
             }
             if (life_Points <= 0)
             {
                 life_Points = 0;
             }
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

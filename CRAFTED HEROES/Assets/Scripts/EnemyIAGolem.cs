@@ -109,10 +109,12 @@ public class EnemyIAGolem : MonoBehaviour
         if (controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("atack") == true )
         {
             hitBox.SetActive(true);
+            hitBox.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
             hitBox.SetActive(false);
+            hitBox.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 

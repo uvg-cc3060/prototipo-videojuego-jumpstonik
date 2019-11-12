@@ -124,10 +124,12 @@ public class EnemyIAFlyer : MonoBehaviour
         if (controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("attack") == true)
         {
             hitBox.SetActive(true);
+            hitBox.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
             hitBox.SetActive(false);
+            hitBox.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 

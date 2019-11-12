@@ -19,6 +19,7 @@ TagManager:
   - Skeleton
   - UI
   - Terreno
+  - data
   layers:
   - Default
   - TransparentFX

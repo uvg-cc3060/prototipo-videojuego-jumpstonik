@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class UIController : MonoBehaviour
     public Image HealtBar;
     public Image MagicBar;
     public ThirdPersonCharacter player;
-    private float secondsCount = 59;
-    private int minuteCount = 9;
+    public float secondsCount = 59;
+    public int minuteCount = 9;
     void Start()
     {
         
@@ -36,12 +37,27 @@ public class UIController : MonoBehaviour
             minuteCount--;
             secondsCount = 59;
         }
+        if (secondsCount <10)
+        {
+            Timer.text = "0" + minuteCount + ":0" + (int)secondsCount;
+        }
+        else { 
         Timer.text = "0" + minuteCount + ":" + (int)secondsCount;
+        }
 
+        if(minuteCount <= 0 && secondsCount <= 0)
+        {
+
+        }
     }
     public void CountOfKills()
     {
         kills += 1;
         KillCont.text = kills + "";
+    }
+    public void EndScreen()
+    {
+        //Time.timeScale = 1f;
+        SceneManager.LoadScene("EndLevelScene");
     }
 }

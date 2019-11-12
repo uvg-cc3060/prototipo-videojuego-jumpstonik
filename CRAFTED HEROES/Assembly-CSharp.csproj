@@ -61,16 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\magicPotion.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\AxeController.cs" />
     <Compile Include="Assets\Scripts\bulletController.cs" />
+    <Compile Include="Assets\Scripts\ComaBackMenu.cs" />
+    <Compile Include="Assets\Scripts\DataScript.cs" />
+    <Compile Include="Assets\Scripts\EndScoreScript.cs" />
     <Compile Include="Assets\Scripts\EnemiesHealtBar.cs" />
     <Compile Include="Assets\Scripts\EnemyIAFlyer.cs" />
     <Compile Include="Assets\Scripts\EnemyIAGolem.cs" />
@@ -78,16 +73,18 @@
     <Compile Include="Assets\Scripts\Gollem2.cs" />
     <Compile Include="Assets\Scripts\hitPlayer.cs" />
     <Compile Include="Assets\Scripts\LifePotion.cs" />
+    <Compile Include="Assets\Scripts\LoadingScreen.cs" />
     <Compile Include="Assets\Scripts\MagicPotion.cs" />
+    <Compile Include="Assets\Scripts\pauseMenu.cs" />
     <Compile Include="Assets\Scripts\pickableObject.cs" />
     <Compile Include="Assets\Scripts\pickUpObject.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\principal.cs" />
     <Compile Include="Assets\Scripts\PushRigidBody.cs" />
     <Compile Include="Assets\Scripts\PutableObject.cs" />
     <Compile Include="Assets\Scripts\shootingController.cs" />
     <Compile Include="Assets\Scripts\ThirdpersonCamara.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
-    <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
