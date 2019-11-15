@@ -10,14 +10,14 @@ public class EndScoreScript : MonoBehaviour
     public Text secondsPoints;
     public Text minutePoints;
     public Text totalScore;
-    public GameObject Data;
     private int calcul;
     private int total;
+    private float time = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Data = GameObject.FindWithTag("data");
+        
         score();
 
         //Data = FindObjectOfType<DataScript>();
@@ -25,25 +25,29 @@ public class EndScoreScript : MonoBehaviour
 
     private void score()
     {
-        if (Data != null)
-        { /*
-            calcul = Data.GetComponent<DataScript>().kills * 1000;
-            total += calcul;
-            killPoints.text = "1000 x " + Data.GetComponent<DataScript>().kills + " = " + calcul;
-            calcul = Data.GetComponent<DataScript>().minutes * 5000;
-            total += calcul;
-            minutePoints.text = "1000 x " + Data.GetComponent<DataScript>().minutes + " = " + calcul;
-            calcul = (int)Data.GetComponent<DataScript>().seconds * 50;
-            total += calcul;
-            secondsPoints.text = "1000 x " + (int)Data.GetComponent<DataScript>().seconds + " = " + calcul;
-            totalScore.text = total.ToString();
-            */
+     
+        calcul = PlayerPrefs.GetInt("kills",0) * 1000;
+        total += calcul;
+        killPoints.text = "1000 x " + PlayerPrefs.GetInt("kills", 0) + " = " + calcul;
+        calcul = PlayerPrefs.GetInt("minutesLeft", 0) * 5000;
+        total += calcul;
+        minutePoints.text = "5000 x " + PlayerPrefs.GetInt("minutesLeft", 0) + " = " + calcul;
+        calcul = (int)PlayerPrefs.GetInt("secondsLeft", 0) * 50;
+        total += calcul;
+        secondsPoints.text = "50 x " + (int)PlayerPrefs.GetInt("secondsLeft", 0) + " = " + calcul;
+        totalScore.text = total.ToString();
+        PlayerPrefs.DeleteAll();
+     
+    }
+
+    private void Update()
+    {
+        time -= Time.deltaTime;
+        if (time <= 0)
+        {
+            SceneManager.LoadScene("SelectLevels");
         }
     }
-    public void LoadMenu()
-    {
-        //Time.timeScale = 1f;
-        SceneManager.LoadScene("SelectLevels");
-    }
+
 
 }

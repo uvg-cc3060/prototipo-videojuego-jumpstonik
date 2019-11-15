@@ -14,8 +14,8 @@ public class UIController : MonoBehaviour
     public Image HealtBar;
     public Image MagicBar;
     public ThirdPersonCharacter player;
-    public float secondsCount = 59;
-    public int minuteCount = 9;
+    public float secondsCount = 19;
+    public int minuteCount = 0;
     void Start()
     {
         
@@ -30,9 +30,13 @@ public class UIController : MonoBehaviour
     }
     public void UpdateTimer()
     {
+        if (minuteCount <= 0 && secondsCount <= 0)
+        {
+            EndScreen();
+        }
         //set timer UI
         secondsCount -= Time.deltaTime;
-        if (secondsCount <= 0)
+        if (secondsCount <= 0 && minuteCount >0)
         {
             minuteCount--;
             secondsCount = 59;
@@ -45,10 +49,7 @@ public class UIController : MonoBehaviour
         Timer.text = "0" + minuteCount + ":" + (int)secondsCount;
         }
 
-        if(minuteCount <= 0 && secondsCount <= 0)
-        {
-
-        }
+       
     }
     public void CountOfKills()
     {

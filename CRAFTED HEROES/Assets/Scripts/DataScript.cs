@@ -15,19 +15,15 @@ public class DataScript : MonoBehaviour
         UI = GameObject.FindWithTag("UI").GetComponent<UnityEngine.Canvas>();
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (UI != null)
         {
-        kills = UI.GetComponent<UIController>().kills;
-        minutes = UI.GetComponent<UIController>().minuteCount;
-        seconds = UI.GetComponent<UIController>().secondsCount;
+        PlayerPrefs.SetInt("kills", UI.GetComponent<UIController>().kills);
+        PlayerPrefs.SetInt("minutesLeft", UI.GetComponent<UIController>().minuteCount);
+        PlayerPrefs.SetFloat("secondsLefts", UI.GetComponent<UIController>().secondsCount);
+
         }
     }
 }

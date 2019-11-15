@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\bulletController.cs" />
     <Compile Include="Assets\Scripts\ComaBackMenu.cs" />
     <Compile Include="Assets\Scripts\DataScript.cs" />
+    <Compile Include="Assets\Scripts\destroyobjetc.cs" />
     <Compile Include="Assets\Scripts\EndScoreScript.cs" />
     <Compile Include="Assets\Scripts\EnemiesHealtBar.cs" />
     <Compile Include="Assets\Scripts\EnemyIAFlyer.cs" />
@@ -75,6 +76,8 @@
     <Compile Include="Assets\Scripts\LifePotion.cs" />
     <Compile Include="Assets\Scripts\LoadingScreen.cs" />
     <Compile Include="Assets\Scripts\MagicPotion.cs" />
+    <Compile Include="Assets\Scripts\menuController.cs" />
+    <Compile Include="Assets\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Scripts\pauseMenu.cs" />
     <Compile Include="Assets\Scripts\pickableObject.cs" />
     <Compile Include="Assets\Scripts\pickUpObject.cs" />
