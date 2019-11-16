@@ -74,18 +74,18 @@ public class AxeController : MonoBehaviour
         if (controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("horizontal_attack") == true || controlAnimator.GetCurrentAnimatorStateInfo(0).IsName("vertical_attack") == true)
         {
             metalHitBox.SetActive(true);
+            metalHitBox.GetComponent<BoxCollider>().enabled = true;
             mangoHitBox.SetActive(true);
+            mangoHitBox.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
             metalHitBox.SetActive(false);
             mangoHitBox.SetActive(false);
+            metalHitBox.GetComponent<BoxCollider>().enabled = true;
+            mangoHitBox.GetComponent<BoxCollider>().enabled = true;
         }
         
     }
 
-    private void shooting(int num)
-    {
-
-    }
 }

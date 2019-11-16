@@ -183,11 +183,12 @@ public class EnemyIAGolem : MonoBehaviour
     {
         if(other.tag == "metalHit")
         {
-            lifePoints -= 20;
+            lifePoints -= 2;
         }
         if(other.tag == "mangoHit")
         {
-            lifePoints -= 10;
+            lifePoints -= 1;
         }
+        other.gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 }

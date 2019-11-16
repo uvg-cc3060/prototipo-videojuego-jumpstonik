@@ -25,6 +25,8 @@ public class MeshGenerator : MonoBehaviour
         MeshCollider meshc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
         meshc.sharedMesh = mesh; // Give it your mesh here
 
+        gameObject.GetComponent<NavMeshSurface>().BuildNavMesh();
+
         //mesh.Build
         //UpdateMesh();
         //OnDrawGizmos();

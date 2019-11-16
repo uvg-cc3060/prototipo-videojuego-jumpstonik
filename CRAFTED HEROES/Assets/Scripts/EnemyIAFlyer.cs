@@ -221,15 +221,17 @@ public class EnemyIAFlyer : MonoBehaviour
     {
         if (other.tag == "metalHit")
         {
-            lifePoints -= 20;
+            lifePoints -= 2;
             changeStates(4);
             updateAnimations();
+
         }
         if (other.tag == "mangoHit")
         {
-            lifePoints -= 10;
+            lifePoints -= 1;
             changeStates(4);
             updateAnimations();
         }
+        other.gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 }

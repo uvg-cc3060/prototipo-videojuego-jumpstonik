@@ -71,7 +71,6 @@
     <Compile Include="Assets\Scripts\EnemyIAFlyer.cs" />
     <Compile Include="Assets\Scripts\EnemyIAGolem.cs" />
     <Compile Include="Assets\Scripts\EnemyIASkeleton.cs" />
-    <Compile Include="Assets\Scripts\Gollem2.cs" />
     <Compile Include="Assets\Scripts\hitPlayer.cs" />
     <Compile Include="Assets\Scripts\LifePotion.cs" />
     <Compile Include="Assets\Scripts\LoadingScreen.cs" />
@@ -87,7 +86,9 @@
     <Compile Include="Assets\Scripts\PutableObject.cs" />
     <Compile Include="Assets\Scripts\shootingController.cs" />
     <Compile Include="Assets\Scripts\ThirdpersonCamara.cs" />
+    <Compile Include="Assets\Scripts\ThirdPersonUserControlCC.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
+    <None Include="Assets\NavMeshComponents\ProjectSettings\ProjectVersion.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/proyecto-videojuegos/prototipo-videojuego-jumpstonik/CRAFTED HEROES/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -672,6 +673,22 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{DB133C9F-2F0A-8CCE-DE79-4E0EAE14F73D}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
+      <Project>{8331A2BF-1899-F75C-236A-519ED869E8D4}</Project>
+      <Name>NavMeshComponentsExamplesEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{31F6A2E8-C42F-9643-C2D7-78C19A1EE860}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{C07CD015-C3E9-133E-5DDA-D633D0E4060E}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsExamples.csproj">
+      <Project>{75BF7386-594B-65FF-CA31-DD76FADD2C0E}</Project>
+      <Name>NavMeshComponentsExamples</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

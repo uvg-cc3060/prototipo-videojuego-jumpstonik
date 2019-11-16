@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = GetComponent<CharacterController>();
+        //Camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>;
 
     }
 
