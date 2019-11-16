@@ -3,7 +3,16 @@ guid: e7dabb9d1c94ac942974cb1cfd4f41c0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rb: {instanceID: 0}
+  - hitBox: {instanceID: 0}
+  - controlAnimator: {instanceID: 0}
+  - lifePotion: {instanceID: 0}
+  - magicPotion: {instanceID: 0}
+  - spawnZone: {instanceID: 0}
+  - anim: {instanceID: 0}
+  - Target: {fileID: 149790, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 3}
+  - agent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

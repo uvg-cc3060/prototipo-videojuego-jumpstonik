@@ -63,6 +63,7 @@
     <Compile Include="Assets\magicPotion.cs" />
     <Compile Include="Assets\Scripts\AxeController.cs" />
     <Compile Include="Assets\Scripts\bulletController.cs" />
+    <Compile Include="Assets\Scripts\changePhysics.cs" />
     <Compile Include="Assets\Scripts\ComaBackMenu.cs" />
     <Compile Include="Assets\Scripts\DataScript.cs" />
     <Compile Include="Assets\Scripts\destroyobjetc.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\PushRigidBody.cs" />
     <Compile Include="Assets\Scripts\PutableObject.cs" />
     <Compile Include="Assets\Scripts\shootingController.cs" />
+    <Compile Include="Assets\Scripts\SpawnMounters.cs" />
     <Compile Include="Assets\Scripts\ThirdpersonCamara.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonUserControlCC.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />

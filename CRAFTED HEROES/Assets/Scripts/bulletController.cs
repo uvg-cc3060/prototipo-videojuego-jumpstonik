@@ -15,14 +15,15 @@ public class bulletController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Terreno" || collision.gameObject.tag == "Golem" || collision.gameObject.tag == "Skeleton" || collision.gameObject.tag == "Flyer")
+        if (collision.gameObject.tag == "Terreno" /*|| collision.gameObject.tag == "Golem" || collision.gameObject.tag == "Skeleton" || collision.gameObject.tag == "Flyer"*/)
         {
             Destroy(gameObject);
         }
     }
+    
 }

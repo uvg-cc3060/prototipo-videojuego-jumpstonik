@@ -44,6 +44,7 @@ public class EnemyIAFlyer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Target = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody>();
         UI = GameObject.FindWithTag("UI").GetComponent<UnityEngine.Canvas>();
     }
@@ -221,17 +222,18 @@ public class EnemyIAFlyer : MonoBehaviour
     {
         if (other.tag == "metalHit")
         {
-            lifePoints -= 2;
+            lifePoints -= 20;
             changeStates(4);
             updateAnimations();
-
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
         if (other.tag == "mangoHit")
         {
-            lifePoints -= 1;
+            lifePoints -= 10;
             changeStates(4);
             updateAnimations();
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        other.gameObject.GetComponent<BoxCollider>().enabled = false;
+        
     }
 }
